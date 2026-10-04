@@ -154,6 +154,9 @@ h1 span{color:var(--surf-blue)}
   display:none;text-align:center;padding:60px 20px;border:1px dashed rgba(255,255,255,.15);
   border-radius:16px;color:var(--muted)
 }
+.loading-msg{
+  text-align:center;padding:60px 20px;color:var(--muted);font-size:15px
+}
 
 .footer{
   border-top:1px solid var(--line);padding:35px 0 45px;background:rgba(0,0,0,.2)
@@ -212,7 +215,7 @@ h1 span{color:var(--surf-blue)}
 @media(max-width:600px){
   .hero{min-height:440px}
   .hero-inner{padding:40px 0}
-  .brand-logo{width:58px;height:58px}
+  .brand-logo{height:58px}
   .brand-name{font-size:12px}
   .controls{grid-template-columns:1fr;margin-top:-25px}
   .grid{grid-template-columns:1fr}
