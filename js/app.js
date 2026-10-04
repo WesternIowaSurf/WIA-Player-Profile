@@ -1,3 +1,19 @@
+/*
+=========================================================
+LIVE DATA SOURCE
+=========================================================
+Player data is fetched from the "Public Roster" tab of the
+Google Sheet, published to the web as CSV. That tab excludes
+Timestamp and Date of Birth columns on purpose — do not point
+this at a tab that includes those.
+
+To add a player: just submit the Google Form. No code changes
+needed. The page re-fetches the sheet on every page load.
+=========================================================
+*/
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSx0bwVsMUMcvbFEBE3SUbQkjjhA4Fs-2rKTyZLXoKma9mR_Pc5HSBqeBQZAsDjfHGYbQ-DnzXf4oHf/pub?gid=937735891&single=true&output=csv";
+
+let players = [];
 
 const grid = document.getElementById("playerGrid");
 const search = document.getElementById("search");
@@ -16,11 +32,99 @@ function lastName(name){
   return parts[parts.length - 1];
 }
 
+function normalizeName(name){
+  return name.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+// Minimal RFC4180-style CSV parser (handles quoted fields with commas/quotes)
+function parseCSV(text){
+  const rows = [];
+  let row = [];
+  let field = "";
+  let inQuotes = false;
+  for(let i = 0; i < text.length; i++){
+    const c = text[i];
+    if(inQuotes){
+      if(c === '"'){
+        if(text[i+1] === '"'){ field += '"'; i++; }
+        else { inQuotes = false; }
+      } else {
+        field += c;
+      }
+    } else {
+      if(c === '"'){
+        inQuotes = true;
+      } else if(c === ","){
+        row.push(field); field = "";
+      } else if(c === "\n" || c === "\r"){
+        if(c === "\r" && text[i+1] === "\n") i++;
+        row.push(field); field = "";
+        rows.push(row); row = [];
+      } else {
+        field += c;
+      }
+    }
+  }
+  if(field.length > 0 || row.length > 0){
+    row.push(field);
+    rows.push(row);
+  }
+  return rows.filter(r => r.length > 1 || (r.length === 1 && r[0] !== ""));
+}
+
+function buildPhotoLookup(){
+  const lookup = {};
+  const source = (typeof playerPhotos !== "undefined") ? playerPhotos : {};
+  Object.keys(source).forEach(name=>{
+    lookup[normalizeName(name)] = source[name];
+  });
+  return lookup;
+}
+
+async function loadPlayers(){
+  const res = await fetch(SHEET_CSV_URL, { cache: "no-store" });
+  if(!res.ok) throw new Error("Sheet fetch failed: " + res.status);
+  const text = await res.text();
+  const rows = parseCSV(text);
+  if(rows.length < 2) return [];
+
+  const headers = rows[0].map(h => h.trim());
+  const photoLookup = buildPhotoLookup();
+
+  return rows.slice(1)
+    .filter(row => row.some(cell => cell.trim() !== ""))
+    .map(row=>{
+      const obj = {};
+      headers.forEach((h,i)=> obj[h] = (row[i] || "").trim());
+
+      const name = obj["Name"] || "";
+      return {
+        name,
+        gradYear: obj["Graduation Year"] || "",
+        team: obj["Team"] || "",
+        position: obj["Position"] || "",
+        jersey: obj["Jersey"] || "",
+        gpa: obj["GPA"] || "",
+        school: obj["School"] || "",
+        major: obj["Major"] || "",
+        playerEmail: obj["Email"] || "",
+        phone: obj["Phone"] || "",
+        coach: obj["Coach"] || "",
+        coachEmail: obj["Coach Email"] || "",
+        film: obj["Film Link"] || "",
+        image: photoLookup[normalizeName(name)] || ""
+      };
+    })
+    .filter(p => p.name);
+}
+
 function initFilters(){
-  [...new Set(players.map(p=>p.gradYear))].sort().forEach(y=>{
+  year.innerHTML = '<option value="">All Graduation Years</option>';
+  position.innerHTML = '<option value="">All Positions</option>';
+  [...new Set(players.map(p=>p.gradYear))].filter(Boolean).sort().forEach(y=>{
     year.innerHTML += `<option value="${y}">${y}</option>`;
   });
-  [...new Set(players.map(p=>p.position))].sort().forEach(p=>{
+  [...new Set(players.map(p=>p.position))].filter(Boolean).sort().forEach(p=>{
     position.innerHTML += `<option value="${p}">${p}</option>`;
   });
 }
@@ -176,5 +280,16 @@ year.addEventListener("change",render);
 position.addEventListener("change",render);
 sortSelect.addEventListener("change",render);
 
-initFilters();
-render();
+async function init(){
+  grid.innerHTML = `<div class="loading-msg">Loading players…</div>`;
+  try{
+    players = await loadPlayers();
+    initFilters();
+    render();
+  } catch(err){
+    grid.innerHTML = `<div class="loading-msg">Couldn't load player data right now. Please refresh, or check back shortly.</div>`;
+    console.error(err);
+  }
+}
+
+init();
