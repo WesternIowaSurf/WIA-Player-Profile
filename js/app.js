@@ -50,18 +50,6 @@ function render(){
       return aVal - bVal;
     });
   });
-  teamNames.forEach(team=>{
-    groups[team].sort((a,b)=>{
-      const numA = parseInt(a.jersey, 10);
-      const numB = parseInt(b.jersey, 10);
-      const validA = !isNaN(numA);
-      const validB = !isNaN(numB);
-      if(validA && validB) return numA - numB;
-      if(validA) return -1;
-      if(validB) return 1;
-      return 0;
-    });
-  });
 
   grid.innerHTML = teamNames.map(team=>`
     <div class="team-group">
@@ -126,11 +114,6 @@ function showProfile(index){
         <strong>Team:</strong> ${p.team}<br>
         <strong>Jersey:</strong> #${p.jersey || "—"}<br>
         <strong>Graduation:</strong> ${p.gradYear}</p>
-      </div>
-
-      <div class="profile-section profile-full">
-        <h3>Player Bio</h3>
-        <p>${p.bio || "Player bio coming soon."}</p>
       </div>
 
       <div class="profile-section">
