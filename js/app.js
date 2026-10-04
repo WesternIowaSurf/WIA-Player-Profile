@@ -11,6 +11,11 @@ function initials(name){
   return name.split(" ").map(n=>n[0]).filter(Boolean).slice(0,2).join("").toUpperCase();
 }
 
+function lastName(name){
+  const parts = name.trim().split(/\s+/);
+  return parts[parts.length - 1];
+}
+
 function initFilters(){
   [...new Set(players.map(p=>p.gradYear))].sort().forEach(y=>{
     year.innerHTML += `<option value="${y}">${y}</option>`;
@@ -42,12 +47,14 @@ function render(){
   const sortBy = sortSelect.value;
   teamNames.forEach(team=>{
     groups[team].sort((a,b)=>{
-      if(sortBy === "name") return a.name.localeCompare(b.name);
-      const aNum = parseInt(a.jersey, 10);
-      const bNum = parseInt(b.jersey, 10);
-      const aVal = isNaN(aNum) ? Infinity : aNum;
-      const bVal = isNaN(bNum) ? Infinity : bNum;
-      return aVal - bVal;
+      if(sortBy === "jersey"){
+        const aNum = parseInt(a.jersey, 10);
+        const bNum = parseInt(b.jersey, 10);
+        const aVal = isNaN(aNum) ? Infinity : aNum;
+        const bVal = isNaN(bNum) ? Infinity : bNum;
+        return aVal - bVal;
+      }
+      return lastName(a.name).localeCompare(lastName(b.name));
     });
   });
 
@@ -160,7 +167,7 @@ function clearFilters(){
   search.value = "";
   year.value = "";
   position.value = "";
-  sortSelect.value = "jersey";
+  sortSelect.value = "lastname";
   render();
 }
 
