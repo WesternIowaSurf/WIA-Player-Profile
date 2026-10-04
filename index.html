@@ -40,8 +40,8 @@
       <option value="">All Positions</option>
     </select>
     <select id="sort" class="control">
+      <option value="lastname" selected>Sort: Last Name (A-Z)</option>
       <option value="jersey">Sort: Jersey #</option>
-      <option value="name">Sort: Name (A-Z)</option>
     </select>
     <button class="btn btn-secondary" onclick="clearFilters()">Reset</button>
   </div>
@@ -55,7 +55,7 @@
       <div id="results" class="results"></div>
     </div>
 
-    <div id="playerGrid" class="grid"></div>
+    <div id="playerGrid"></div>
     <div id="empty" class="empty">No players match your search.</div>
   </section>
 </main>
