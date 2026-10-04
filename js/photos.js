@@ -43,7 +43,7 @@ const playerPhotos = {
   "Aaron Martinez": "images/IMG_0971.jpeg",
   "Oliver Carns": "images/IMG_0958.jpeg",
   "Jameson Parks": "images/IMG_0975.jpeg",
-  "Giovani Contreras Andrade": "images/IMG_0965.jpeg"
-  "Jesus Salazar": "images/Jesus_Salazar.jpg"
+  "Giovani Contreras Andrade": "images/IMG_0965.jpeg",
+  "Jesus Salazar": "images/Jesus_Salazar.jpg",
   "Oliver Vides Gomez": "images/Oliver-Vides-Gomez.jpg"
 };
