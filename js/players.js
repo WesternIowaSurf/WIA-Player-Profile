@@ -25,8 +25,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: ""
   },
   {
     name: "Will Grudle",
@@ -42,8 +41,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/will-grudle.jpg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/will-grudle.jpg"
   },
   {
     name: "Andrew Shearer",
@@ -59,8 +57,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0956.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0956.jpeg"
   },
   {
     name: "Eli Yochum",
@@ -76,8 +73,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0973.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0973.jpeg"
   },
   {
     name: "Luke Mortensen",
@@ -93,8 +89,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0949.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0949.jpeg"
   },
   {
     name: "Blake Aldrich",
@@ -110,8 +105,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0963.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0963.jpeg"
   },
   {
     name: "Payton Witte",
@@ -127,8 +121,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0951.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0951.jpeg"
   },
   {
     name: "Lewis Miranda",
@@ -144,8 +137,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0967.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0967.jpeg"
   },
   {
     name: "Maksym Dovbii",
@@ -161,8 +153,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0970.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0970.jpeg"
   },
   {
     name: "Jeremy Tomas",
@@ -178,8 +169,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0968.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0968.jpeg"
   },
   {
     name: "Doolin Vaughan",
@@ -195,8 +185,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0952.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0952.jpeg"
   },
   {
     name: "Ethan Michael",
@@ -212,8 +201,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0964.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0964.jpeg"
   },
   {
     name: "Logan Benson",
@@ -229,8 +217,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0959.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0959.jpeg"
   },
   {
     name: "Maximiliano Iniguez",
@@ -246,8 +233,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0969.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0969.jpeg"
   },
   {
     name: "Camden McCord",
@@ -263,8 +249,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0961.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0961.jpeg"
   },
   {
     name: "Cael Johnson",
@@ -280,8 +265,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0962.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0962.jpeg"
   },
   {
     name: "Samuel Wise",
@@ -297,11 +281,10 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0974.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0974.jpeg"
   },
   {
-    name: "Gilberto Rodr\u00edguez Aguilar",
+    name: "Gilberto Rodríguez Aguilar",
     gradYear: "2030",
     team: "WIA Surf U16 Boys Blue",
     position: "Forward",
@@ -314,8 +297,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0955.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0955.jpeg"
   },
   {
     name: "Joey Lane",
@@ -331,8 +313,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0960.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0960.jpeg"
   },
   {
     name: "Kasey Donner",
@@ -348,8 +329,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0957.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0957.jpeg"
   },
   {
     name: "Briggs Barta",
@@ -365,8 +345,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0972.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0972.jpeg"
   },
   {
     name: "Aaron Martinez",
@@ -382,8 +361,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0971.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0971.jpeg"
   },
   {
     name: "Oliver Carns",
@@ -399,8 +377,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0958.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0958.jpeg"
   },
   {
     name: "Jameson Parks",
@@ -416,8 +393,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0975.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0975.jpeg"
   },
   {
     name: "Giovani Contreras Andrade",
@@ -433,8 +409,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "images/IMG_0965.jpeg",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: "images/IMG_0965.jpeg"
   },
   {
     name: "Jesus Salazar",
@@ -450,8 +425,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: ""
   },
   {
     name: "Eduardo Aguilar",
@@ -467,8 +441,7 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: ""
   },
   {
     name: "Oliver Vides Gomez",
@@ -484,7 +457,6 @@ const players = [
     coach: "Ryan Grudle",
     coachEmail: "rgrudle@westerniowasurf.com",
     film: "",
-    image: "",
-    bio: "Add player bio here — playing style, strengths, leadership, development focus, and goals."
+    image: ""
   }
 ];
