@@ -80,7 +80,7 @@ h1 span{color:var(--surf-blue)}
   margin-top:-35px;position:relative;z-index:5;
   background:rgba(5,14,21,.96);border:1px solid var(--line);
   box-shadow:var(--shadow);border-radius:18px;padding:18px;
-  display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:12px
+  display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr auto auto;gap:12px
 }
 .control{
   width:100%;border:1px solid rgba(255,255,255,.12);background:#0b1c28;
@@ -212,6 +212,104 @@ h1 span{color:var(--surf-blue)}
   .controls{grid-template-columns:1fr 1fr}
   .grid{grid-template-columns:repeat(2,1fr)}
 }
+/* =========================================================
+   PRINT STYLES
+   Prints player cards 2-up x 4-down = 8 per 8.5x11 sheet.
+   White page background (ink-friendly), but keeps the club's
+   blue/navy color scheme for borders, text and accents so
+   photos and branding still look good on paper.
+   ========================================================= */
+@media print{
+  @page{ size: letter; margin: 0.4in; }
+
+  *{
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+    color-adjust:exact !important;
+  }
+
+  .hero, .controls, .footer, #modal, .section-head, .results, .empty, .loading-msg{
+    display:none !important;
+  }
+
+  body{
+    background:#fff !important;
+    color:var(--navy) !important;
+  }
+
+  .container{width:100%;margin:0}
+  .section{padding:0}
+
+  #playerGrid{gap:0}
+  .team-group{
+    page-break-inside:avoid;
+    margin-bottom:0.15in;
+  }
+  .team-group-title{
+    color:var(--surf-blue-dark);
+    border-bottom-color:var(--surf-blue);
+    font-size:13px;margin-bottom:0.1in;padding-bottom:0.05in;
+  }
+  .team-group-count{color:#5a7382}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0.2in;
+  }
+
+  .card{
+    background:#fff !important;
+    border:1.5px solid var(--surf-blue);
+    border-radius:8px;
+    box-shadow:none;
+    page-break-inside:avoid;
+    break-inside:avoid;
+    overflow:hidden;
+    min-height:2.3in;
+  }
+  .card:hover{transform:none}
+  .card-top:after, .card:before{display:none !important}
+
+  .card-top{
+    padding:10px 12px 8px;
+    border-bottom:1px solid rgba(24,168,227,.3);
+    gap:10px;
+  }
+  .avatar{
+    width:48px;height:48px;
+    border-color:var(--surf-blue);
+  }
+  .avatar-fallback{
+    width:48px;height:48px;
+    color:#fff;background:var(--surf-blue);
+    border-color:var(--surf-blue-dark);
+  }
+  .class{color:var(--surf-blue-dark);font-size:9px}
+  .name{color:var(--navy);font-size:16px;margin:4px 0 2px}
+  .position{color:#2c4a5c;font-size:12px}
+  .jersey{color:rgba(24,168,227,.15);font-size:34px}
+
+  .card-body{padding:8px 12px}
+  .info-row{border-bottom-color:rgba(24,168,227,.18);padding:4px 0;font-size:11px}
+  .label{color:#5a7382}
+  .value{color:var(--navy)}
+
+  .card-actions{display:none !important}
+
+  /* Print contact info that's normally only in the modal */
+  .card-body::after{
+    content: attr(data-print-contact);
+    display:block;
+    font-size:10px;
+    color:#2c4a5c;
+    padding-top:6px;
+    margin-top:4px;
+    border-top:1px solid rgba(24,168,227,.18);
+    white-space:pre-line;
+  }
+}
+
 @media(max-width:600px){
   .hero{min-height:440px}
   .hero-inner{padding:40px 0}
