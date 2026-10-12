@@ -183,7 +183,9 @@ function render(){
             </div>
             <div class="card-body">
               <div class="info-row"><span class="label">Jersey</span><span class="value">#${p.jersey || "—"}</span></div>
+              <div class="info-row print-only"><span class="label">Position</span><span class="value">${p.position || "—"}</span></div>
               <div class="info-row"><span class="label">School</span><span class="value">${p.school || "—"}</span></div>
+              <div class="info-row print-only"><span class="label">GPA</span><span class="value">${p.gpa || "—"}</span></div>
               <div class="info-row"><span class="label">Academic Interest</span><span class="value">${p.major || "—"}</span></div>
             </div>
             <div class="card-actions">
