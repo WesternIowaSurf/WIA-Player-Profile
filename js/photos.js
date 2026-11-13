@@ -49,5 +49,16 @@ const playerPhotos = {
   "Ava Chambers": "images/ava-chambers-2.jpg",
   "Addi Kohl": "images/addi-kohl.jpeg",
   "Brissa Cruz": "images/brissa-cruz.jpeg",
+  "Sicara Arevalo": "images/sicara-arevalo.jpeg",
+  "Emma Kafka": "images/emma-kafka.jpeg",
+  "Emmagen Quick": "images/emmagen-quick-2.jpeg",
+  "Gabriella Sogbadji": "images/gabriella-sogbadji.jpeg",
+  "Lexi McIntosh": "images/lexi-mcintosh-2.jpeg",
+  "Lyla Cramer": "images/lyla-cramer.jpeg",
+  "Quinn Meyer": "images/quinn-meyer-2.jpeg",
+  "Quinn Reese": "images/quinn-reese-2.jpeg",
+  "Stella Robicheau": "images/stella-robicheau.jpeg",
+  "Natalia Torres": "images/natalia-torres.jpeg",
+  "Elena Villarreal": "images/elena-villarreal-2.jpeg",
   
 };
