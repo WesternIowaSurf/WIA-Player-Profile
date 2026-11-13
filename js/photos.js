@@ -46,4 +46,5 @@ const playerPhotos = {
   "Giovani Contreras Andrade": "images/IMG_0965.jpeg",
   "Jesus Salazar": "images/IMG_1187.jpg",
   "Oliver Vides Gomez": "images/Oliver-Vides-Gomz.jpg",
+  "Ava Chambers": "images/ava-chambers-2.jpeg",
 };
