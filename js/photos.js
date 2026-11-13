@@ -47,4 +47,7 @@ const playerPhotos = {
   "Jesus Salazar": "images/IMG_1187.jpg",
   "Oliver Vides Gomez": "images/Oliver-Vides-Gomz.jpg",
   "Ava Chambers": "images/ava-chambers-2.jpg",
+  "Addi Kohl": "images/addi-kohl.jpeg",
+  "Brissa Cruz": "images/brissa-cruz.jpeg",
+  
 };
