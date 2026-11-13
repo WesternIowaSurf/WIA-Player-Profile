@@ -18,7 +18,7 @@ let players = [];
 const grid = document.getElementById("playerGrid");
 const search = document.getElementById("search");
 const year = document.getElementById("year");
-const position = document.getElementById("position");
+const team = document.getElementById("team");
 const sortSelect = document.getElementById("sort");
 const results = document.getElementById("results");
 const empty = document.getElementById("empty");
@@ -120,25 +120,25 @@ async function loadPlayers(){
 
 function initFilters(){
   year.innerHTML = '<option value="">All Graduation Years</option>';
-  position.innerHTML = '<option value="">All Positions</option>';
+  team.innerHTML = '<option value="">All Teams</option>';
   [...new Set(players.map(p=>p.gradYear))].filter(Boolean).sort().forEach(y=>{
     year.innerHTML += `<option value="${y}">${y}</option>`;
   });
-  [...new Set(players.map(p=>p.position))].filter(Boolean).sort().forEach(p=>{
-    position.innerHTML += `<option value="${p}">${p}</option>`;
+  [...new Set(players.map(p=>p.team))].filter(Boolean).sort().forEach(t=>{
+    team.innerHTML += `<option value="${t}">${t}</option>`;
   });
 }
 
 function render(){
   const q = search.value.trim().toLowerCase();
   const y = year.value;
-  const pos = position.value;
+  const tm = team.value;
 
   const filtered = players.filter(p=>{
     const haystack = `${p.name} ${p.team} ${p.position} ${p.school} ${p.major}`.toLowerCase();
     return (!q || haystack.includes(q)) &&
            (!y || p.gradYear === y) &&
-           (!pos || p.position === pos);
+           (!tm || p.team === tm);
   });
 
   const groups = {};
@@ -272,14 +272,14 @@ function closeModal(e){
 function clearFilters(){
   search.value = "";
   year.value = "";
-  position.value = "";
+  team.value = "";
   sortSelect.value = "lastname";
   render();
 }
 
 search.addEventListener("input",render);
 year.addEventListener("change",render);
-position.addEventListener("change",render);
+team.addEventListener("change",render);
 sortSelect.addEventListener("change",render);
 
 async function init(){
